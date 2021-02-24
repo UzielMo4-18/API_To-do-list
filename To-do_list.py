@@ -1,4 +1,42 @@
+import firebase_admin
+from firebase_admin import credentials,db
 from flask import Flask,jsonify,abort,request
+
+cred = credentials.Certificate("api-tdl-firebase-adminsdk.json")
+default_app=firebase_admin.initialize_app(cred,{
+    'databaseURL': 'https://api-tdl-default-rtdb.firebaseio.com/'
+})
+
+print(default_app)
+
+ref=db.reference('/')
+
+def Read():
+    print(ref.get())
+
+def Create():
+    ref.set({
+        'tasks':{
+            '1':{
+                'Name':'Ir a bañarse',
+                'Check':False
+            },
+            '2':{
+                'Name':'Estudiar',
+                'Check':False
+            },
+        }
+    })
+
+def Update():
+    pass
+
+def Delete():
+    pass
+
+Create()
+
+'''
 app=Flask(__name__)
 
 tasks=[
@@ -46,4 +84,4 @@ def create_task():
     return jsonify({'task':task}),201
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=True)'''
