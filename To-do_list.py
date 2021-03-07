@@ -66,3 +66,18 @@ def delete():
 port = int(os.environ.get('PORT', 8000))
 if __name__ == '__main__':
     app.run(threaded=True, host='0.0.0.0', port=port, debug=True)
+'''
+ref.set({
+    'tasks':{
+        '1':{
+            'id':1,
+            'Name':'Ir a bañarse',
+            'Check':False
+        },
+        '2':{
+            'id':2,
+            'Name':'Estudiar',
+            'Check':False
+        },
+    }
+})'''
