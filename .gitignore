@@ -128,4 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#api-tdl-firebase-adminsdk.json
+api-tdl-firebase-adminsdk.json
